@@ -1,0 +1,55 @@
+{
+  "app": {
+    "title": "Plataforma de Gestión de Refrigeración Frascold",
+    "home": "Inicio de Frascold",
+    "main-navigation": "Navegación principal"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "new-item": "Nuevo ítem de refrigeración"
+  },
+  "language": { "label": "Idioma" },
+  "home": {
+    "title": "Inicio",
+    "description": "Productos diseñados para centros de refrigeración industrial.",
+    "my-cooling-hubs": "Mis CoolingHubs",
+    "component-list": "Componentes de refrigeración",
+    "loading": "Cargando CoolingHubs",
+    "empty": "Vacío",
+    "no-hubs": "No hay CoolingHubs disponibles.",
+    "total-components": "Componentes totales",
+    "available-capacity": "Capacidad disponible"
+  },
+  "new-item": {
+    "title": "Nuevo ítem de refrigeración",
+    "subtitle": "Añade componentes de refrigeración a tu CoolingHub",
+    "cooling-type": "Tipo de refrigeración",
+    "component": "Componente",
+    "quantity": "Cantidad",
+    "available-capacity": "Capacidad disponible",
+    "required": "Este campo es obligatorio.",
+    "minimum-quantity": "La cantidad debe ser al menos 1.",
+    "no-matching-hub": "No hay un CoolingHub para este tipo de refrigeración.",
+    "loading-components": "Cargando componentes..."
+  },
+  "cooling-types": {
+    "chillers": "Enfriadores",
+    "freezers": "Congeladores",
+    "cryogenic": "Criogénicos",
+    "condensers": "Condensadores",
+    "evaporators": "Evaporadores",
+    "compressors": "Compresores"
+  },
+  "actions": { "create": "Crear", "cancel": "Cancelar" },
+  "errors": {
+    "load": "No se pudieron cargar los datos de CoolingHub. Comprueba la fake API e inténtalo de nuevo.",
+    "components": "No se pudieron cargar los componentes de este tipo de refrigeración.",
+    "capacity": "La cantidad supera la capacidad disponible de este CoolingHub.",
+    "save": "No se pudo crear el ítem de refrigeración. Inténtalo de nuevo."
+  },
+  "not-found": {
+    "title": "Página no encontrada",
+    "message": "No se encontró la ruta solicitada:",
+    "home": "Volver al inicio"
+  }
+}

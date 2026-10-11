@@ -1,59 +1,39 @@
-# Frascold
+# Frascold Cooling Management Platform
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.2.
+Angular 22 application for managing Frascold CoolingHubs and their refrigeration items.
 
-## Development server
+## Run the fake API
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Install the dependencies, then start the API from the project root:
 
 ```bash
-ng generate component component-name
+npm install
+npm run api
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+This runs json-server 0.17.4 with `server/db.json` at `http://localhost:3000`.
+The application reads `/cooling-hubs` and `/refrigeration-items` from this API.
+
+## Run the application
+
+In a second terminal:
 
 ```bash
-ng generate --help
+npm start
 ```
 
-## Building
+Open `http://localhost:4200`. Sample refrigeration components are loaded from the matching
+endpoint at `https://api.sampleapis.com/refrigeration` when a cooling type is selected.
 
-To build the project run:
+## Project structure
 
-```bash
-ng build
-```
+The application is organized by bounded context and layered architecture:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- `src/app/shared`: layout, language switching, and shared infrastructure.
+- `src/app/preservation`: CoolingHubs, RefrigerationItems, overview state, and registration.
+- `src/app/refrigeration`: SampleAPI components and cooling type selection.
+- `src/environments`: API base URLs and the Logo.dev token.
+- `server/db.json`: json-server data for the fake API.
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The interface defaults to English and supports English and Spanish. It uses Angular Material,
+standalone components, Angular Signals, HttpClient, Angular Router, and ngx-translate.

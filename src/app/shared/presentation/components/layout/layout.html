@@ -1,0 +1,19 @@
+<mat-toolbar class="topbar" role="banner">
+  <a class="brand" routerLink="/home" [attr.aria-label]="'app.home' | translate">
+    <img class="brand-logo" [src]="logoUrl" alt="Frascold" />
+    <span>{{ 'app.title' | translate }}</span>
+  </a>
+  <nav class="main-navigation" [attr.aria-label]="'app.main-navigation' | translate">
+    <a mat-button routerLink="/home" routerLinkActive="active-link" ariaCurrentWhenActive="page">
+      {{ 'navigation.home' | translate }}
+    </a>
+    <a mat-button routerLink="/refrigeration/items/new" routerLinkActive="active-link">
+      {{ 'navigation.new-item' | translate }}
+    </a>
+  </nav>
+  <app-language-switcher />
+</mat-toolbar>
+
+<main class="page-shell" id="main-content">
+  <router-outlet />
+</main>

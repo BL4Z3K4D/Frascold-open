@@ -1,0 +1,29 @@
+<section aria-labelledby="home-title">
+  <header class="page-heading">
+    <p class="eyebrow">FRASCOLD · COOLING SOLUTIONS</p>
+    <h1 id="home-title">{{ 'home.title' | translate }}</h1>
+    <p class="intro">{{ 'home.description' | translate }}</p>
+  </header>
+
+  <section class="hubs-section" aria-labelledby="hubs-title">
+    <div class="section-heading"><h2 id="hubs-title">{{ 'home.my-cooling-hubs' | translate }}</h2></div>
+    @if (store.loading()) {
+      <mat-spinner diameter="32" [attr.aria-label]="'home.loading' | translate" />
+    } @else if (store.error()) {
+      <p role="alert">{{ 'errors.load' | translate }}</p>
+    } @else if (store.hubSummaries().length === 0) {
+      <p class="empty-hubs">{{ 'home.no-hubs' | translate }}</p>
+    } @else {
+      <div class="hub-grid">
+        @for (summary of store.hubSummaries(); track summary.hub.id) {
+          <app-cooling-hub-summary
+            [hub]="summary.hub"
+            [items]="summary.items"
+            [totalComponents]="summary.totalComponents"
+            [availableCapacity]="summary.availableCapacity"
+          />
+        }
+      </div>
+    }
+  </section>
+</section>

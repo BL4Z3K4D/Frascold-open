@@ -1,0 +1,16 @@
+{
+  "cooling-hubs": [
+    { "id": 1, "name": "Medium Temperature Chiller Hub", "coolingType": "chillers", "capacity": 120 },
+    { "id": 2, "name": "Low Temperature Freezer Hub", "coolingType": "freezers", "capacity": 100 },
+    { "id": 3, "name": "Ultra-Low Cryogenic Storage Hub", "coolingType": "cryogenic", "capacity": 90 },
+    { "id": 4, "name": "Heavy Industrial Condenser Hub", "coolingType": "condensers", "capacity": 110 },
+    { "id": 5, "name": "High-Efficiency Evaporator Hub", "coolingType": "evaporators", "capacity": 80 },
+    { "id": 6, "name": "Semi-Hermetic Compressor Hub", "coolingType": "compressors", "capacity": 95 }
+  ],
+  "refrigeration-items": [
+    { "id": 1, "hubId": 1, "coolingType": "chillers", "componentId": 1, "componentName": "Water-Cooled Centrifugal Pack", "quantity": 10, "registeredAt": "2026-05-17T09:30:00" },
+    { "id": 2, "hubId": 2, "coolingType": "freezers", "componentId": 16, "componentName": "Electronic Expansion Valve", "quantity": 35, "registeredAt": "2026-05-17T10:15:00" },
+    { "id": 3, "hubId": 3, "coolingType": "cryogenic", "componentId": 28, "componentName": "Liquid Nitrogen Injection Controller", "quantity": 5, "registeredAt": "2026-05-17T11:00:00" },
+    { "id": 4, "hubId": 6, "coolingType": "compressors", "componentId": 42, "componentName": "ATEX Certified Screw Compressor", "quantity": 14, "registeredAt": "2026-05-17T11:45:00" }
+  ]
+}

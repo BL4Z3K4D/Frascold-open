@@ -1,0 +1,10 @@
+.page-heading { padding-bottom: 36px; border-bottom: 1px solid #111; }
+.eyebrow { margin: 0 0 14px; font-size: 11px; font-weight: 600; letter-spacing: .15em; }
+h1 { margin: 0; font-size: clamp(36px, 6vw, 58px); line-height: 1.05; letter-spacing: -.045em; font-weight: 500; }
+.intro { margin: 18px 0 0; font-size: clamp(16px, 2vw, 20px); line-height: 1.5; }
+.item-form { display: grid; grid-template-columns: minmax(0, 620px); gap: 12px; max-width: 620px; padding-top: 34px; }
+.form-actions { display: flex; justify-content: flex-end; gap: 12px; padding-top: 10px; }
+.form-actions button { min-height: 44px; border-radius: 0; }
+.form-notice, .form-error { margin: 0; font-size: 14px; }
+.form-error { font-weight: 600; }
+:host ::ng-deep .mat-mdc-form-field { width: 100%; }

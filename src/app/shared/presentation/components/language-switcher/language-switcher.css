@@ -1,0 +1,4 @@
+:host { display: inline-flex; }
+:host ::ng-deep .mat-button-toggle-group { border: 1px solid #111; border-radius: 0; }
+:host ::ng-deep .mat-button-toggle { background: #fff; color: #111; font-size: 12px; }
+:host ::ng-deep .mat-button-toggle-checked { background: #111; color: #fff; }

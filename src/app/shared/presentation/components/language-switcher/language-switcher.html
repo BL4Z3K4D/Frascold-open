@@ -1,0 +1,7 @@
+<mat-button-toggle-group [value]="currentLanguage()" [attr.aria-label]="'language.label' | translate" name="language">
+  @for (language of languages; track language) {
+    <mat-button-toggle [value]="language" [attr.aria-label]="language.toUpperCase()" (click)="useLanguage(language)">
+      {{ language.toUpperCase() }}
+    </mat-button-toggle>
+  }
+</mat-button-toggle-group>

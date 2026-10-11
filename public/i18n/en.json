@@ -1,0 +1,55 @@
+{
+  "app": {
+    "title": "Frascold Cooling Management Platform",
+    "home": "Frascold home",
+    "main-navigation": "Main navigation"
+  },
+  "navigation": {
+    "home": "Home",
+    "new-item": "New Refrigeration Item"
+  },
+  "language": { "label": "Language" },
+  "home": {
+    "title": "Home",
+    "description": "Engineered Products for Industrial CoolingHubs.",
+    "my-cooling-hubs": "My CoolingHubs",
+    "component-list": "Refrigeration components",
+    "loading": "Loading CoolingHubs",
+    "empty": "Empty",
+    "no-hubs": "No CoolingHubs are available.",
+    "total-components": "Total Components",
+    "available-capacity": "Available Capacity"
+  },
+  "new-item": {
+    "title": "New Refrigeration Item",
+    "subtitle": "Add Refrigeration Components to Your CoolingHub",
+    "cooling-type": "Cooling Type",
+    "component": "Component",
+    "quantity": "Quantity",
+    "available-capacity": "Available Capacity",
+    "required": "This field is required.",
+    "minimum-quantity": "Quantity must be at least 1.",
+    "no-matching-hub": "There is no CoolingHub for this cooling type.",
+    "loading-components": "Loading components..."
+  },
+  "cooling-types": {
+    "chillers": "Chillers",
+    "freezers": "Freezers",
+    "cryogenic": "Cryogenic",
+    "condensers": "Condensers",
+    "evaporators": "Evaporators",
+    "compressors": "Compressors"
+  },
+  "actions": { "create": "Create", "cancel": "Cancel" },
+  "errors": {
+    "load": "CoolingHub data could not be loaded. Check the fake API and try again.",
+    "components": "Components could not be loaded for this cooling type.",
+    "capacity": "Quantity exceeds the available capacity for this CoolingHub.",
+    "save": "The Refrigeration Item could not be created. Please try again."
+  },
+  "not-found": {
+    "title": "Page not found",
+    "message": "The requested route was not found:",
+    "home": "Return to Home"
+  }
+}

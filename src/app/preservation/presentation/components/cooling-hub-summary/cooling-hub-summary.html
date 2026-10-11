@@ -1,0 +1,20 @@
+<mat-card class="hub-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{ hub.name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    @if (items.length === 0) {
+      <p class="empty-state">{{ 'home.empty' | translate }}</p>
+    } @else {
+      <ul class="component-list" [attr.aria-label]="'home.component-list' | translate">
+        @for (item of items; track item.id) {
+          <li><span>{{ item.componentName }}</span><span class="quantity">{{ item.quantity }}</span></li>
+        }
+      </ul>
+    }
+  </mat-card-content>
+  <mat-card-footer class="hub-footer">
+    <div><span>{{ 'home.total-components' | translate }}</span><strong>{{ totalComponents }}</strong></div>
+    <div><span>{{ 'home.available-capacity' | translate }}</span><strong>{{ availableCapacity }}</strong></div>
+  </mat-card-footer>
+</mat-card>

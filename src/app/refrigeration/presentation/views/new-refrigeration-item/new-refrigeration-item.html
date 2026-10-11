@@ -1,0 +1,64 @@
+<section aria-labelledby="new-item-title">
+  <header class="page-heading">
+    <p class="eyebrow">FRASCOLD · COOLING SOLUTIONS</p>
+    <h1 id="new-item-title">{{ 'new-item.title' | translate }}</h1>
+    <p class="intro">{{ 'new-item.subtitle' | translate }}</p>
+  </header>
+
+  <form class="item-form" [formGroup]="form" (ngSubmit)="create()" aria-labelledby="new-item-title">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'new-item.cooling-type' | translate }}</mat-label>
+      <mat-select formControlName="coolingType" required>
+        @for (type of coolingTypes; track type) {
+          <mat-option [value]="type">{{ ('cooling-types.' + type) | translate }}</mat-option>
+        }
+      </mat-select>
+      @if (form.controls.coolingType.hasError('required') && form.controls.coolingType.touched) {
+        <mat-error>{{ 'new-item.required' | translate }}</mat-error>
+      }
+    </mat-form-field>
+
+    @if (selectedCoolingType && !selectedHub) {
+      <p class="form-notice" role="status">{{ 'new-item.no-matching-hub' | translate }}</p>
+    }
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'new-item.component' | translate }}</mat-label>
+      <mat-select formControlName="componentId" required [disabled]="!selectedCoolingType || !selectedHub || loadingComponents()">
+        @for (component of components(); track component.id) {
+          <mat-option [value]="component.id">{{ component.name }}</mat-option>
+        }
+      </mat-select>
+      @if (form.controls.componentId.hasError('required') && form.controls.componentId.touched) {
+        <mat-error>{{ 'new-item.required' | translate }}</mat-error>
+      }
+    </mat-form-field>
+    @if (loadingComponents()) { <p class="form-notice" role="status">{{ 'new-item.loading-components' | translate }}</p> }
+    @if (componentError()) { <p class="form-error" role="alert">{{ 'errors.components' | translate }}</p> }
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'new-item.quantity' | translate }}</mat-label>
+      <input matInput type="number" min="1" [max]="availableCapacity" formControlName="quantity" required />
+      @if (selectedHub) {
+        <mat-hint>{{ 'new-item.available-capacity' | translate }}: {{ availableCapacity }}</mat-hint>
+      }
+      @if (form.controls.quantity.hasError('required') && form.controls.quantity.touched) {
+        <mat-error>{{ 'new-item.required' | translate }}</mat-error>
+      } @else if (form.controls.quantity.hasError('min') && form.controls.quantity.touched) {
+        <mat-error>{{ 'new-item.minimum-quantity' | translate }}</mat-error>
+      }
+    </mat-form-field>
+
+    @if (selectedHub && form.controls.quantity.value !== null && form.controls.quantity.value > availableCapacity) {
+      <p class="form-error" role="alert">{{ 'errors.capacity' | translate }}</p>
+    }
+
+    @if (saveError() === 'capacity-error') { <p class="form-error" role="alert">{{ 'errors.capacity' | translate }}</p> }
+    @if (saveError() === 'save-error') { <p class="form-error" role="alert">{{ 'errors.save' | translate }}</p> }
+
+    <div class="form-actions">
+      <button mat-button type="button" (click)="cancel()">{{ 'actions.cancel' | translate }}</button>
+      <button mat-flat-button type="submit" [disabled]="saving() || !selectedHub">{{ 'actions.create' | translate }}</button>
+    </div>
+  </form>
+</section>
